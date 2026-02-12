@@ -1,7 +1,26 @@
-node_modules
-.DS_Store
+# Dependencies
+node_modules/
+
+# Environment
 .env
-dist
-build
-coverage
-.vscode
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+.vercel/
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
