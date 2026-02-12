@@ -1,42 +1,42 @@
 # Planzo: Zero to MVP Roadmap
 
 ## Phase 1: Foundation & Infrastructure (Week 1)
-- [ ] **Project Setup**: Initialize Monorepo (or separate Frontend/Backend repos).
+- [x] **Project Setup**: Initialize Monorepo (or separate Frontend/Backend repos).
 - [ ] **Database**: Spin up PostgreSQL (preferably with PostGIS). Run `schema.sql`.
-- [ ] **Backend Base**: Setup Express app, configure `dotenv`, `cors`, and connect to DB.
-- [ ] **Frontend Base**: `create-react-app` or `vite`. Install `react-router-dom`, `axios`, `react-query`.
+- [x] **Backend Base**: Setup Express app, configure `dotenv`, `cors`, and connect to DB.
+- [x] **Frontend Base**: `create-react-app` or `vite`. Install `react-router-dom`, `axios`, `react-query`.
 - [ ] **CI/CD**: Basic GitHub Actions to run linting/tests on PRs.
 
 ## Phase 2: Core User Management (Week 1-2)
-- [ ] **Backend Auth**: Implement JWT Authentication (`/register`, `/login`, `/me`).
-- [ ] **Frontend Auth**: Create Login/Register forms. Implement `AuthProvider` to store token.
-- [ ] **Roles**: Ensure middleware restricts "Create Event" to Organizers.
+- [x] **Backend Auth**: Implement JWT Authentication (`/register`, `/login`, `/me`).
+- [x] **Frontend Auth**: Create Login/Register forms. Implement `AuthProvider` to store token.
+- [x] **Roles**: Ensure middleware restricts "Create Event" to Organizers.
 
 ## Phase 3: The "Organizer" Experience (Week 2)
-- [ ] **Event CRUD API**: Implement `createEvent` (as designed in `EventController.js`).
+- [x] **Event CRUD API**: Implement `createEvent` (as designed in `EventController.js`).
 - [ ] **Image Upload**: Integrate AWS S3 or Cloudinary for event banners.
-- [ ] **Organizer Dashboard**: Build the UI for generating events and adding tickets.
+- [x] **Organizer Dashboard**: Build the UI for generating events and adding tickets.
 - [ ] **Google Places**: Integrate Places Autocomplete in the "Create Event" form to get accurate addresses.
 
 ## Phase 4: The "Discovery" Experience (Week 3) (Critical Value Prop)
 - [ ] **Geocoding**: Connect Backend to Google Maps Geocoding API.
-- [ ] **Search API**: Implement the Haversine/PostGIS query logic (`GET /events?lat=...`).
-- [ ] **Interactive Map**: Build the `MapView` in React. Plot pins for events.
-- [ ] **User Location**: Implement the browser geolocation prompt logic.
+- [x] **Search API**: Implement the Haversine/PostGIS query logic (`GET /events?lat=...`).
+- [x] **Interactive Map**: Build the `MapView` in React. Plot pins for events.
+- [x] **User Location**: Implement the browser geolocation prompt logic.
 
 ## Phase 5: Ticketing & Payments (Week 3-4)
 - [ ] **Stripe Account**: Set up Stripe connect or standard account.
-- [ ] **Backend Booking**: Implement `/api/bookings` to create a `PaymentIntent`.
-- [ ] **Frontend Checkout**: Build `CheckoutFlow` using `Stripe Elements`.
+- [x] **Backend Booking**: Implement `/api/bookings` to create a `PaymentIntent`.
+- [x] **Frontend Checkout**: Build `CheckoutFlow` using `Stripe Elements`.
 - [ ] **Webhooks**: Handle `payment_intent.succeeded` to flip Booking status to `confirmed`.
 
 ## Phase 6: Polish & Launch (Week 4)
 - [ ] **Emails**: Integrate SendGrid/Resend to email tickets (QR Codes) upon confirmation.
 - [ ] **Load Testing**: high-traffic lookup test (using Redis for caching if needed).
-- [ ] **Deployment**:
-  - Backend: AWS EC2 or Render/Heroku.
-  - Frontend: Vercel or AWS S3+CloudFront.
-  - DB: AWS RDS or Supabase.
+- [x] **Deployment**:
+  - Backend: Vercel Serverless Functions (Express wrapped as serverless).
+  - Frontend: Vercel (Vite build served as static files).
+  - DB: Vercel Postgres / Supabase / Neon (see DEPLOYMENT.md).
 
 ## MVP Cut-Line (Post-MVP Features)
 - Social features (Following organizers).
